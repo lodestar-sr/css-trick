@@ -1,0 +1,42 @@
+/****************  Move logo to the left side of form  *************/
+form.login {
+  max-width: 74em;
+}
+
+form.login > img {
+  height: 100%;
+  width: 40%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin: 0 5%;
+  transform: translateY(-50%);
+}
+
+form.login > *:not(img) {
+  margin-left: 50%;
+}
+
+
+/****************  Swap the position of Session Number and Username fields  *************/
+form.login > * {
+  order: 1;
+}
+form.login label[for="username"],
+form.login label[for="username"] + input {
+  order: 0 !important;
+}
+form.login label[for="session"],
+form.login label[for="session"] + input {
+  order: 2 !important;
+}
+form.login label[for="username"] + input ~ * {
+  order: 4;
+}
+
+
+/****************  Hide Account field  *************/
+form.login label[for="account"],
+form.login label[for="account"] + input {
+  display: none;
+}
